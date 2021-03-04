@@ -9,7 +9,11 @@ class MainContainer extends Component {
     state = {  
         result: {},
         search: "",
-
+        name: "",
+        email: "",
+        cell: "",
+        phone: "",
+        location: "",
     };
 
 
@@ -23,7 +27,12 @@ class MainContainer extends Component {
     //then set the state of result equal to the response data
     searchDirectory = query => {
         API.search(query)
-          .then(res => this.setState({ result: res.data }))
+          .then(res => this.setState({ result: res.data.data }))
+          .then(res => this.setState({ name: res.data.name }))
+          .then(res => this.setState({ email: res.data.email }))
+          .then(res => this.setState({ cell: res.data.cell }))
+          .then(res => this.setState({ phone: res.data.phone }))
+          .then(res => this.setState({ location: res.data.location }))
           .catch(err => console.log(err));
     };
 
