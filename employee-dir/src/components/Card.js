@@ -4,30 +4,11 @@ import React, { Component } from 'react';
 // import API from "../utils/API";
 
 
-class Card extends Component {
-    state = {  
-        // result: {},
-        //see fields from Random User.. i.e.:
-        name: "Tom Anderson"
-        title: "Accountant"
-        email: "tom@email.com"
-        phone: "555-5555"
-
-    };
-
-
-
 //render the elements of the employee info for card
-render() { 
+function Card(props)() { 
     return (  
         <div>
-            <img src={this.state.imageUrl} alt='' />
-            <ul>
-                <li>{this.state.name}</li>
-                <li>{this.state.title}</li>
-                <li>{this.state.phone}</li>
-                <li>{this.state.email}</li>
-            </ul>
+            <h3>Employee Info</h3>
         </div>
     )
 }

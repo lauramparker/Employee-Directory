@@ -12,7 +12,6 @@ function EmployeeInfo(props) {
   );
 }
 
-
 export default EmployeeInfo;
 
 
