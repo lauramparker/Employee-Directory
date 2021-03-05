@@ -1,8 +1,10 @@
 import React from "react";
-import MainContainer from "./components/MainContainer";
+import Container from "./components/Container";
 
 function App() {
-  return <MainContainer />;
+  return <div className="container">
+  <Container />;
+  </div> 
 }
 
 export default App;

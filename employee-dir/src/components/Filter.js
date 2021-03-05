@@ -18,7 +18,7 @@ class Filter extends Component {
 
     //When the component mounts, request the data from Random User in Utils/API
     componentDidMount() {
-      API.getEmployees(); 
+      API.getEmployees()
         .then(res => this.setState({ employees: res.data }))
         .catch(err => console.log(err));
     }

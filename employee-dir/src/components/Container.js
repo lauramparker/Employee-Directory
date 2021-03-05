@@ -1,4 +1,9 @@
 import React from "react";
+import Card from "./Card";
+import EmployeeInfo from "./EmployeeInfo";
+import FilterName from "./FilterName";
+import FilterNats from "./FilterNats";
+import Filter from "./Filter";
 
 
 function Container() { 
@@ -12,7 +17,7 @@ function Container() {
                         Search Here
                         </FilterForm>
                     </Card>
-                </Filter>
+            </Filter>
 
         </div>
 
