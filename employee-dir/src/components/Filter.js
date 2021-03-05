@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Card from "./Card";
 import EmployeeInfo from "./EmployeeInfo";
-import FilterForm from "./FilterForm"
+import FilterName from "./FilterName";
+import FilterNats from "./FilterNats";
+import Container from "./Container";
 import API from "../utils/API";
 
 class Filter extends Component {
@@ -21,32 +23,46 @@ class Filter extends Component {
         .catch(err => console.log(err));
     }
 
-
-    handleInputChange = event => {
-        this.setState({ filter: event.target.value }); //check???
+    handleChangeName = event => {
+        this.setState({ filterNameValue: event.target.value }); //check???
     };  
 
+    handleChangeNats = event => {
+        this.setState({ filterNatsValue: event.target.value }); //check???
+    }; 
+
     //if the user wants to search/filter the directory, Random User API returns data set per the filter
-    handleSubmit = event => {
+    handleNameSubmit = event => {
         event.preventDefault();
-        API.filterEmployeeList(this.state.filter)
+        API.filterEmployeeList(this.state.filterNameValue)
     };
 
-
+    handleNatsSubmit = event => {
+        event.preventDefault();
+        API.filterEmployeeList(this.state.filterNatsValue)
+    };
 
 
     render() { 
         return (  
             <div>
-
-                <Filter>
+                <Container>
                     <Card>
-                        <EmployeeInfo></EmployeeInfo>
-                        <FilterForm>
-                        Search Here
-                        </FilterForm>
+                        <EmployeeInfo>
+
+                        </EmployeeInfo>
                     </Card>
-                </Filter>
+                    
+                    <Filter>
+                        <FilterNats>
+                        Search by Country
+                        </FilterNats>
+                        
+                        <FilterName>
+                        Enter Name Search
+                        </FilterName>
+                    </Filter>
+                </Container>
 
             </div>
 

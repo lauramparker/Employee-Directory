@@ -5,10 +5,11 @@ import React from "react";
 function FilterNats(props) {
 
     return (
-      <form onSubmit={props.handleSubmit}>
+      <form onSubmit={props.handleNatsSubmit}>
         <label>
           Filter Employee Directory by Select Country
-          <select value={props.state.filterNatsValue} onChange={props.handleInputChange}>
+          </label>
+          <select value={props.state.filterNatsValue} onChange={props.handleChangeNats}>
 
             <option value="au">Australia</option>
             <option value="br">Brazil</option>
@@ -27,10 +28,10 @@ function FilterNats(props) {
             <option value="tr">Turkey</option>
             <option value="us">United States</option>
           </select>
-        </label>
-        <input type="submit" value="Submit" />
+  
+        <input type="submit" value="Submit" /> 
       </form>
-    );
+    ); //Add button for submit? 
 }
 
 

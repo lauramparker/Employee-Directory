@@ -8,16 +8,16 @@ function FilterName(props) {
         <div className="form-group">
           <label htmlFor="search">Enter a Name to Filter Results:</label>
           <input
-            onChange={props.handleInputChange}
-            filter={props.filter}
+            onChange={props.handleChangeName}
+            value={props.filterNameValue} // filterNameValue = props.filterNameValue
             name="search"
             type="text"
             className="form-control"
-            placeholder="Filter Results"
+            placeholder="Name"
             id="search"
           />
           <br />
-          <button onClick={props.handleFormSubmit} className="btn btn-primary">
+          <button onClick={props.handleNameSubmit} className="btn btn-primary">
             Search
           </button>
         </div>
