@@ -9,7 +9,7 @@ function FilterName(props) {
           <label htmlFor="search">Enter a Name to Filter Results:</label>
           <input
             onChange={props.handleInputChange}
-            value={props.value}
+            filter={props.filter}
             name="search"
             type="text"
             className="form-control"

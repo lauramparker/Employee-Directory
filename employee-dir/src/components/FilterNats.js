@@ -8,7 +8,7 @@ function FilterNats(props) {
       <form onSubmit={props.handleSubmit}>
         <label>
           Filter Employee Directory by Select Country
-          <select value={props.state.filterNatsValue} onChange={props.handleChange}>
+          <select value={props.state.filterNatsValue} onChange={props.handleInputChange}>
 
             <option value="au">Australia</option>
             <option value="br">Brazil</option>

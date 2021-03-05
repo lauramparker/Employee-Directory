@@ -22,7 +22,7 @@ class Filter extends Component {
     }
 
 
-    handleChange = event => {
+    handleInputChange = event => {
         this.setState({ filter: event.target.value }); //check???
     };  
 
