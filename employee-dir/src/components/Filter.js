@@ -34,12 +34,12 @@ class Filter extends Component {
     //if the user wants to search/filter the directory, Random User API returns data set per the filter
     handleNameSubmit = event => {
         event.preventDefault();
-        API.filterEmployeeList(this.state.filterNameValue)
+        API.filterEmployeeName(this.state.filterNameValue)
     };
 
     handleNatsSubmit = event => {
         event.preventDefault();
-        API.filterEmployeeList(this.state.filterNatsValue)
+        API.filterEmployeeNats(this.state.filterNatsValue)
     };
 
 
