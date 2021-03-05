@@ -1,9 +1,9 @@
 import React from "react";
 
 
-class FilterNats extends Component {
 
-  render(props) {
+function FilterNats(props) {
+
     return (
       <form onSubmit={props.handleSubmit}>
         <label>
@@ -31,8 +31,6 @@ class FilterNats extends Component {
         <input type="submit" value="Submit" />
       </form>
     );
-  }
-
 }
 
 

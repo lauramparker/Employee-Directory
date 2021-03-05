@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 
 
 //render the elements of the employee info for card
-function Card(props)() { 
+function Card(props) { 
     return (  
         <div>
             <h3>Employee Info</h3>
@@ -13,6 +13,5 @@ function Card(props)() {
     )
 }
 
-}
 
 export default Card;

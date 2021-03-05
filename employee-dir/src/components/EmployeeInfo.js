@@ -7,7 +7,9 @@ function EmployeeInfo(props) {
       <h5>Name: {props.name}</h5>
       <h5>Title: {props.title}</h5>
       <h5>Phone: {props.phone}</h5>
+      <h5>Cell: {props.cell}</h5>
       <h5>Email: {props.email}</h5>
+      <h5>Location: {props.location}</h5>
     </div>
   );
 }

@@ -4,12 +4,13 @@ import EmployeeInfo from "./EmployeeInfo";
 import FilterForm from "./FilterForm"
 import API from "../utils/API";
 
-class MainContainer extends Component {
+class Filter extends Component {
     state = {  
         employees: {},
         result: {},
         didFilter: true,
-        filter: "",
+        filterNatsValue: "",   //value of filter term
+        filterNameValue: "",
     };
 
 
@@ -21,41 +22,37 @@ class MainContainer extends Component {
     }
 
 
-    handleInputChange = event => {
+    handleChange = event => {
         this.setState({ filter: event.target.value }); //check???
     };  
 
     //if the user wants to search/filter the directory, Random User API returns data set per the filter
-    handleSearchSubmit = event => {
+    handleSubmit = event => {
         event.preventDefault();
         API.filterEmployeeList(this.state.filter)
     };
+
+
 
 
     render() { 
         return (  
             <div>
 
-                <MainContainer>
+                <Filter>
                     <Card>
                         <EmployeeInfo></EmployeeInfo>
-                        <SearchForm>
+                        <FilterForm>
                         Search Here
-                        </SearchForm>
+                        </FilterForm>
                     </Card>
-                </MainContainer>
+                </Filter>
 
             </div>
 
         ); //end return
 
-       //add methods for the class here: conditional? search Dir?
-    //    formatCard() {
-    //     return this.state.name
-
-    //    };
-
     }
 }
  
-export default MainContainer;
+export default Filter;
