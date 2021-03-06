@@ -8,18 +8,19 @@ import API from "../utils/API";
 
 class Filter extends Component {
     state = {  
-        employees: {},
+        employees: [],
         result: {},
         didFilter: true,
         filterNatsValue: "",   //value of filter term
         filterNameValue: "",
+        filterResults: [] 
     };
 
 
     //When the component mounts, request the data from Random User in Utils/API
     componentDidMount() {
       API.getEmployees()
-        .then(res => this.setState({ employees: res.data }))
+        .then(res => this.setState({ employees: res.data })) //always render filter employees ..make employees equal filter method... use .filter method
         .catch(err => console.log(err));
     }
 
@@ -40,6 +41,18 @@ class Filter extends Component {
     handleNatsSubmit = event => {
         event.preventDefault();
         API.filterEmployeeNats(this.state.filterNatsValue)
+    };
+
+    //filter into different fields..
+    handleEmployeeData = event => {
+        { this.state.employees.map(employee => ( 
+        this.setState({ name:  })
+        this.setState({ name:  })
+        this.setState({ name:  })
+        this.setState({ name:  })
+        this.setState({ name:  })
+        this.setState({ name:  })
+        ))}
     };
 
 
