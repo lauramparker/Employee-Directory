@@ -1,8 +1,4 @@
-import React, { Component } from 'react';
-// import MainContainer from "./MainContainer";
-// import SearchForm from "./SearchForm"
-// import API from "../utils/API";
-
+import React from 'react';
 
 //render the elements of the employee info for card
 function Card(props) { 

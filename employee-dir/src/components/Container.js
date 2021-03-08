@@ -9,19 +9,16 @@ import Filter from "./Filter";
 function Container() { 
     return (  
         <div>
-
+            
             <Filter>
-                    <Card>
-                        <EmployeeInfo></EmployeeInfo>
-                        <FilterForm>
-                        Search Here
-                        </FilterForm>
-                    </Card>
+
             </Filter>
 
         </div>
 
     ); //end return
 }
+
+
 
 export default Container;

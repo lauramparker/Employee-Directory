@@ -3,31 +3,30 @@ import API from "../utils/API";
 
 class List extends Component {
 
-    state = {
-        employees: getEmployees()
-    };
+//this component should have the data passed down via props. 
+//the data needs to be manipulated in Filter
+
 
     render() {
         return <table className="table">
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Title</th>
+                    <th>Country</th>
                     <th>Phone</th>
                     <th>Cell</th>
                     <th>Email</th>
-                    <th>Location</th>
+    
                 </tr>
             </thead>
             <tbody>
-                { this.state.employees.map(employee => (
+                { this.state.employees.map(employee => (  //prop.employees.map OR move this to Filter
                     <tr>
                         <td>{employee.name}</td>
-                        <td>{employee.title}</td>
+                        <td>{employee.country}</td>
                         <td>{employee.phone}</td>
                         <td>{employee.cell}</td>
                         <td>{employee.email}</td>
-                        <td>{employee.location}</td>
                     </tr>
                     ) 
                     )}
