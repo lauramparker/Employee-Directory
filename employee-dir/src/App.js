@@ -1,10 +1,12 @@
 import React from "react";
-import Container from "./components/Container";
+import Filter from "./components/Filter";
 
 function App() {
-  return <div className="container">
-  <Container />;
-  </div> 
+  
+  return (
+        <Filter />
+
+  );
 }
 
 export default App;
