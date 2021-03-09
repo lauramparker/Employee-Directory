@@ -1,8 +1,8 @@
 import React from "react";
 
-//table is either prop.firstName or employee.firstName
 
-function EmployeeList (props) {
+//set up table that lists employees
+function EmployeeList(props) {
     return (
     <div>
         <table className="table">
@@ -14,20 +14,22 @@ function EmployeeList (props) {
                 <th>Phone</th>
                 <th>Cell</th>
                 <th>Email</th>
-
             </tr>
         </thead>
         <tbody>
-            { props.employees.map(employee => ( 
-                <tr>
-                    <td>{employee.firstName}</td> 
-                    <td>{employee.lastName}</td>
+            { props.employees.map((employee, index => { 
+                return (
+                <tr key={index}>
+                    <td>{employee.name.first}</td> 
+                    <td>{employee.name.last}</td>
                     <td>{employee.country}</td>
                     <td>{employee.phone}</td>
                     <td>{employee.cell}</td>
                     <td>{employee.email}</td>
                 </tr>
-                ))}
+                )
+            }))
+            }
         </tbody>
         </table> 
     </div>
