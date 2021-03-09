@@ -22,33 +22,22 @@ class Filter extends Component {
       API.getEmployeesList()
         .then(res => this.setState({ employees: res.data.results, filterResults: res.data.results })) 
         .catch(err => console.log(err))
-        .handleEmployeeData(this.state.employees)
+        // .handleEmployeeData(this.state.employees)
     };
 
 
     //map all employee data into different fields using state.employees[]
-    handleEmployeeData = () => {
-        this.state.employees.map(employee => ( //employees should be an array of objects
-                firstName= this.state.employees.results.name.first,
-                lastName= this.state.employess.results.name.last,
-                country= this.state.employees.results.nat,
-                phone= this.state.employees.results.phone,
-                cell= this.state.employees.results.cell,
-                email= this.state.employees.results.email
-        )) 
-    };
+    // handleEmployeeData = () => {
+    //     this.state.employees.map(employee => ( //employees should be an array of objects
+    //             firstName= this.state.employees.results.name.first,
+    //             lastName= this.state.employess.results.name.last,
+    //             country= this.state.employees.results.nat,
+    //             phone= this.state.employees.results.phone,
+    //             cell= this.state.employees.results.cell,
+    //             email= this.state.employees.results.email
+    //     )) 
+    // };
 
-    {props.list.map(user => (
-        <tr key={user.login.uuid}>
-            <td className="align-middle text-center">
-                <img src={user.picture.medium} className="rounded-circle" alt="Employee Profile" />
-            </td>
-            <td className="align-middle">{user.name.first} {user.name.last}</td>
-            <td className="align-middle">{user.location.state}</td>
-            <td className="align-middle">{user.phone}</td>
-            <td className="align-middle">{user.email}</td>
-        </tr>
-    ))}
 
     handleChangeName = event => {
         this.setState({ filterNameValue: event.target.value }); 
@@ -61,17 +50,26 @@ class Filter extends Component {
         API.filterEmployeeName(this.state.filterNameValue)
     };
   
-
-
     render() { 
         return ( 
             <Container>
-
-                <EmployeeList />
-
+                {this.state.employees.map(employee => ( 
+                <EmployeeList 
+                    firstName= {this.state.employees.results.name.first}
+                    lastName= {this.state.employess.results.name.last}
+                    country= {this.state.employees.results.nat}
+                    phone= {this.state.employees.results.phone}
+                    cell= {this.state.employees.results.cell}
+                    email= {this.state.employees.results.email}
+                />
+                ))}
+                <FilterName
+                    value={this.state.filterNameValue}
+                    onChange={this.handleChangeName}
+                    handleChangeName={this.handleChangeName}
+                    handleNameSubmit={this.handleNameSubmit}
+                />
             </Container>
-           
-           
         ); //end return
 
     }

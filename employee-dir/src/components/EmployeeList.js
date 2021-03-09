@@ -1,6 +1,6 @@
 import React from "react";
 
-
+//table is either prop.firstName or employee.firstName
 
 function EmployeeList (props) {
     return (
@@ -20,12 +20,12 @@ function EmployeeList (props) {
         <tbody>
             { props.employees.map(employee => ( 
                 <tr>
-                    <td>{props.firstName}</td>
-                    <td>{props.lastName}</td>
-                    <td>{props.country}</td>
-                    <td>{props.phone}</td>
-                    <td>{props.cell}</td>
-                    <td>{props.email}</td>
+                    <td>{employee.firstName}</td> 
+                    <td>{employee.lastName}</td>
+                    <td>{employee.country}</td>
+                    <td>{employee.phone}</td>
+                    <td>{employee.cell}</td>
+                    <td>{employee.email}</td>
                 </tr>
                 ))}
         </tbody>
