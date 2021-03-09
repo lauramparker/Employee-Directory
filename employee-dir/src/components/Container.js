@@ -1,24 +1,10 @@
 import React from "react";
-import Card from "./Card";
-import EmployeeInfo from "./EmployeeInfo";
-import FilterName from "./FilterName";
-import FilterNats from "./FilterNats";
-import Filter from "./Filter";
+// import Filter from "./Filter";
 
 
-function Container() { 
-    return (  
-        <div>
-            
-            <Filter>
+function Container(props) { 
+    return <div className={`container${props.fluid ? "-fluid" : ""}`}>
+        {props.children}</div>;
 
-            </Filter>
-
-        </div>
-
-    ); //end return
 }
-
-
-
 export default Container;

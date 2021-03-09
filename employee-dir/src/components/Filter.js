@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import Card from "./Card";
-import EmployeeInfo from "./EmployeeInfo";
 import EmployeeList from "./EmployeeList";
 import FilterName from "./FilterName";
-import FilterNats from "./FilterNats";
 import Container from "./Container";
 import API from "../utils/API";
 
@@ -11,10 +8,9 @@ class Filter extends Component {
     state = {  
         employees: [],
         filterResults: [], //results of the filter
-        results: {},  //holding for all results from API
+        // results: {},  //holding for all results from API
         
         didFilter: true,
-        filterNatsValue: "",   //value of filter term for Nationality search
         filterNameValue: "" //value of filter term for Name search
         
     };
@@ -23,85 +19,63 @@ class Filter extends Component {
     //When the component mounts, request the data from Random User in Utils/API, 
     //store API res in state results{}
     componentDidMount() {
-      API.getEmployees()
-        .then(res => this.setState({ results: res.data })) 
+      API.getEmployeesList()
+        .then(res => this.setState({ employees: res.data.results, filterResults: res.data.results })) 
         .catch(err => console.log(err))
-        .handleEmployeeData(state.results)
+        .handleEmployeeData(this.state.employees)
     };
 
-    //map all employee data into different fields using state.results{}
-    handleEmployeeData = ({state.results}) => {
-        state.results.map(employees => { //employees should be an array of objects
-            return {
-                firstName: results.results.name.first,
-                lastName: results.results.name.last,
-                name: results.results.name.first.concat(" ", employee.name.last),
-                phone: results.results.phone,
-                cell: results.results.cell,
-                email: results.results.email,
-                // location: results.results.location,
-                country: results.results.nat
-            };
-        });
+
+    //map all employee data into different fields using state.employees[]
+    handleEmployeeData = () => {
+        this.state.employees.map(employee => ( //employees should be an array of objects
+                firstName= this.state.employees.results.name.first,
+                lastName= this.state.employess.results.name.last,
+                country= this.state.employees.results.nat,
+                phone= this.state.employees.results.phone,
+                cell= this.state.employees.results.cell,
+                email= this.state.employees.results.email
+        )) 
     };
 
-    
-    // //find result of filtered data
-    // handleFilter = (event) => {
-    //     // onClick(event) {  //onclick of name search button - add to rendering below...
-    //     if (event) {
-    //         return{
-         
-    //     this.state.employees.filter(name => name.includes(this.state.filterNameValue));
-    //         .map(filterResults => (
-    //             {filterResults}
-    //         )}
-    //     }
-    // };
-
-
-
+    {props.list.map(user => (
+        <tr key={user.login.uuid}>
+            <td className="align-middle text-center">
+                <img src={user.picture.medium} className="rounded-circle" alt="Employee Profile" />
+            </td>
+            <td className="align-middle">{user.name.first} {user.name.last}</td>
+            <td className="align-middle">{user.location.state}</td>
+            <td className="align-middle">{user.phone}</td>
+            <td className="align-middle">{user.email}</td>
+        </tr>
+    ))}
 
     handleChangeName = event => {
         this.setState({ filterNameValue: event.target.value }); 
     };  
 
-    handleChangeNats = event => {
-        this.setState({ filterNatsValue: event.target.value }); 
-    }; 
 
     //if the user wants to search/filter the directory, Random User API returns data set per the filter
     handleNameSubmit = event => {
         event.preventDefault();
         API.filterEmployeeName(this.state.filterNameValue)
     };
-
-    handleNatsSubmit = event => {
-        event.preventDefault();
-        API.filterEmployeeNats(this.state.filterNatsValue)
-    };
-
   
 
 
     render() { 
-        return (  
-            <div>
+        return ( 
+            <Container>
+
                 <EmployeeList />
-            </div>
+
+            </Container>
+           
+           
         ); //end return
 
     }
 }
 
-{/* <div>
-<FilterNats>
-        Search by Country
-</FilterNats>
-        
-<FilterName>
-        Enter Name Search
-</FilterName>
-</div> */}
  
 export default Filter;
