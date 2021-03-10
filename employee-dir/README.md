@@ -20,8 +20,8 @@
    npm install
    npm install react
    npm install react-dom
-    
-    To run the application locally, navigate to the path containing the employee-dir folder and, from the command line, enter npm start.  The app will build and automatically open (usually on port 3000).
+   
+   To run the application locally, navigate to the path containing the employee-dir folder and, from the command line, enter npm start.  The app will build and automatically open (usually on port 3000).
     
   
 
