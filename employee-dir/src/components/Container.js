@@ -1,9 +1,8 @@
 import React from "react";
-// import Filter from "./Filter";
 
 
 function Container(props) { 
-    return <div className={`container${props.fluid ? "-fluid" : ""}`}>
+    return <div className={`container${props.fluid ? "-fluid" : ""}`}>     <h3>container</h3>
         {props.children}</div>;
 
 }

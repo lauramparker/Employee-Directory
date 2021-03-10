@@ -5,7 +5,7 @@ import React from "react";
 function EmployeeList(props) {
     return (
     <div>
-        <table className="table">
+        <table className="table" id="employees">
         <thead>
             <tr>
                 <th>First Name</th>
@@ -17,18 +17,18 @@ function EmployeeList(props) {
             </tr>
         </thead>
         <tbody>
-            { props.employees.map((employee, index => { 
+            {props.employees.map(employee => { 
                 return (
-                <tr key={index}>
-                    <td>{employee.name.first}</td> 
-                    <td>{employee.name.last}</td>
+                <tr>
+                    <td>{employee.firstName}</td> 
+                    <td>{employee.lastName}</td>
                     <td>{employee.country}</td>
                     <td>{employee.phone}</td>
                     <td>{employee.cell}</td>
                     <td>{employee.email}</td>
                 </tr>
                 )
-            }))
+            })
             }
         </tbody>
         </table> 

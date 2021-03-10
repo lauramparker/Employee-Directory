@@ -8,15 +8,15 @@ function FilterName(props) {
           <label htmlFor="search">Enter a Name to Filter Results:</label>
           <input
             onChange={props.handleChangeName}
-            value={props.filterNameValue} // filterNameValue = props.filterNameValue
-            name="search"
+            value={props.value} // filterNameValue = props.filterNameValue
+            name="filterNameValue"
             type="text"
             className="form-control"
             placeholder="Name"
-            id="search"
+            id="filterNameValue"
           />
           <br />
-          <button onClick={props.handleNameSubmit} className="btn btn-primary">
+          <button onClick={props.filterResults} className="btn btn-primary">
             Search
           </button>
         </div>
