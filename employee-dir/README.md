@@ -11,7 +11,7 @@
 <h3>Overview Snapshot of User Interface:</h3> 
 
 <p>
-    <img src="images/directoryREADME.png" width="350" height="350" />
+    <img src="public/directoryREADME.png" width="350" height="350" />
 </p>
 
 
