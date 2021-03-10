@@ -48,20 +48,18 @@ class Filter extends Component {
         this.setState({
             [name]: value
         });
+        this.filterEmployees();
     };
    
 
-    //if the user wants to search/filter the directory, Random User API returns data set per the filter
-    // handleNameSubmit = event => {
-    //     event.preventDefault();
-    //     this.setState({ employees: res.data.results })
-    // };
+    //if the user wants to search/filter the directory,
+    //List dynamically renders as user types in search
 
-    filterResults  = () => {
+    filterEmployees = () => {
         const evaluate = (this.state.employees).filter((employee) =>
-            ((employee.name.first) + " " + (employee.name.last))
+            ((employee.firstName) || (employee.lastName)) 
             .includes(this.state.filterNameValue));
-        this.setState({ filterResults: evaluate})
+            this.setState({ employees: evaluate})
     };
   
 
@@ -77,7 +75,8 @@ class Filter extends Component {
                         value={this.state.filterNameValue}
                         onChange={this.handleChangeName}
                         handleChangeName={this.handleChangeName}
-                        filterResults={this.filterResults}
+                        filterResults={this.state.filterResults}
+                        employees={this.state.employees}
                     />
                 </Row>
             </Container>

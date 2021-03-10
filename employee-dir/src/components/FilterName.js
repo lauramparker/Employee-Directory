@@ -16,8 +16,8 @@ function FilterName(props) {
             id="filterNameValue"
           />
           <br />
-          <button onClick={props.filterResults} className="btn btn-primary">
-            Search
+          <button onClick={props.employees} className="btn btn-primary">
+            See Directory
           </button>
         </div>
       </form>
