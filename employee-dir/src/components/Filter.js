@@ -33,12 +33,9 @@ class Filter extends Component {
                     email: employee.email,
                 }
             });
-            this.setState({
-                employees: [...employees],
-                filterResults: [...employees]  //sets both state arrays (employees & filterResults equal to same original API call
-            })
-        })//should add sort function callback here
-        .catch(err => console.error(err));
+            //sets both state arrays (employees & filterResults equal to same original API call)
+            this.setState({employees: [...employees], filterResults: [...employees]})
+        }).catch(err => console.error(err));
     };
 
 
